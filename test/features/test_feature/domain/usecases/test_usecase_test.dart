@@ -1,18 +1,18 @@
-import 'package:onlinejournal/features/test_feature/domain/repositories/test_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:onlinejournal/features/test_feature/domain/usecases/test_usecase.dart';
 import 'package:mockito/mockito.dart';
+import 'package:onlinejournal/features/authentication/domain/repositories/school_auth_repository.dart';
+import 'package:onlinejournal/features/authentication/domain/usecases/register_school.dart';
 
 class MockTestRepository extends Mock
-    implements TestRepository {}
+    implements SchoolAuthenticationRepository {}
 
 void main() {
   MockTestRepository repository;
-  TestUsecase usecase;
+  RegisterSchool usecase;
 
   setUp(() {
     repository = MockTestRepository();
-    usecase = TestUsecase(repository);
+    usecase = RegisterSchool(repository);
   });
 
   test('should return test entity model', () async {
